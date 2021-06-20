@@ -8,11 +8,9 @@
 </head>
 <body>
 
-<header>
-お役立ち資料目次
-</header>
+<h1>お役立ち資料目次</h1>
 
-<h1>入力フォーマット</h1>
+<h2>入力フォーマット</h2>
 <form method="POST" action="insert.php">
     <p>タイトル<input type="text" name="title" id="title" size ="15"></p>
     <p>URL<input type="text" name="url" id="url" size ="30"></p>
@@ -21,11 +19,11 @@
     <p>登録<input type="submit" value ="送信"></p>
 </form>
 
-<h1>資料一覧から検索</h1>
+<h2>資料一覧から検索</h2>
 <form method ="POST" action="select.php">
     <p>検索ワード<input type="text" name="keyword" id="keyword"></p>
     <p>タグ<input type="text" name="search_tag" id="search_tag"></p>
-    <p>検索<input type="submit" name="submit" value="送信"></p>
+    <p><input type="submit" name="submit" value="検索"></p>
     
 </form>
 
