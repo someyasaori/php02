@@ -78,7 +78,7 @@ if($status==false){
 </head>
 <body>
 
-<p>検索結果表示</p> 
+<p class="summary">検索結果表示</p> 
 
 <!-- <tr>
 	<td><?=$title_view ?></td>
@@ -118,7 +118,7 @@ foreach($rows as $row){
             <!-- <?php endforeach; ?> -->
         <!-- </table> -->
 
-<p id="result"><?= $view ?></p>
+<p class="result"><?= $view ?></p>
 
 
 </body>

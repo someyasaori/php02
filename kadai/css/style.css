@@ -1,0 +1,139 @@
+/* 登録インプット index.php*/
+
+main{
+    max-width:1200px;
+    height: auto;
+    margin:auto;
+    display:flex;
+    justify-content:space-evenly;
+}
+
+h1{
+    font-size: 25px;
+    color:#006400;
+    font-weight:bold;
+    max-width:50%;
+    background: linear-gradient(transparent 60%, #98fb98 40%);
+    text-align: center;
+    margin:auto;
+}
+
+h2{
+    font-size: 20px;
+    color:#006400;
+    font-weight:bold;
+    text-align: center;
+    margin-top:50px;
+}
+
+.sub{
+    max-width:50%;
+    /* display:flex;
+    justify-content: space-between;
+    text-align: center; */
+}
+
+#title{
+    margin-left: 15px;
+    height:25px;
+}
+
+#url{
+    margin-left: 15px;
+    width: 160px;
+    height:25px;
+}
+
+#details{
+    margin-left: 15px;
+    width: 160px;
+    height:25px;
+}
+
+#tag{
+    margin-left: 15px;
+    width: 160px;
+    height:25px;
+}
+
+#submit{
+    height: 25px;
+    width:60px;
+    margin: 30px 80px 30px 80px;
+    text-align: center;
+    border: none;
+    color: #ffffff;
+    background-color: #5f9ea0;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px 0px #a9a9a9;
+}
+
+/*検索インプット index.php*/
+
+#keyword{
+    margin-left: 15px;
+    width: 110px;
+    height:25px;
+}
+
+#search_tag{
+    margin-left: 15px;
+    width: 160px;
+    height:25px;
+}
+
+.all{
+    margin: 30px 70px 30px 70px;
+}
+
+
+footer{
+    max-width:50%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 16px;
+    color:#696969;
+}
+
+/* 結果表示 select.php */
+
+.summary{
+    max-width:1200px;
+    font-size: 20px;
+    color:#0000cd;
+    font-weight:bold;
+}
+
+.result{
+    max-width:1200px;
+}
+
+table{
+    max-width: 1000px;
+    margin:auto;
+    margin-top:30px;
+}
+
+th{
+    width:10%;
+    font-size:16px;
+    color:#696969;
+    background-color:#b0e0e6;
+    border:1px solid #0000cd;
+    /* border-bottom: 1px solid #0000cd;
+    border-right: 1px solid #0000cd; */
+    text-align: center;
+}
+
+td{
+    font-size:12px;
+    color:#000000;
+    background-color:#fffafa;
+    border:1px solid #0000cd;
+    /* border-bottom: 1px solid #0000cd;
+    border-right: 1px solid #0000cd; */
+    text-align: center;
+}
