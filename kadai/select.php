@@ -93,8 +93,7 @@ if($status==false){
     <?= $view ?>
 </table>
 
-<!-- <p class="result"><?= $view ?></p> -->
-
+<p class="return"><a href="index.php">目次に戻る</a></p>
 
 </body>
 </html>
