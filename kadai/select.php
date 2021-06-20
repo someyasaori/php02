@@ -45,6 +45,8 @@ if($status==false){
     $error = $stmt->errorInfor();
     exit("ErrorQuery:". $error[2]);
 }else{
+   
+    
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
         // $title_view .= $result['title'];
         // $url_view .= $result['url'];
@@ -53,12 +55,13 @@ if($status==false){
         // $indate_view .= $result['indate'];
         
         $view .= "<p>";
-        $view .= $result['title'].' '.$result['url'].' '.$result['details'].' '.$result['tag'].' '.$result['indate'];
+        $view .= $result['title'].''.$result['url'].''.$result['details'].' '.$result['tag'].' '.$result['indate'];
         $view .= "</p>";
-        // <table>
-        // $view .= <tr><td>$result['title']</td><td>$result['url']</td><td>$result['details']</td><td>$result['tag']</td><td>$result['indate']</td></tr>;
-        // </table>
+        
+        // $rows[] =$row;
+
     }
+    
 }
 
 ?>
@@ -70,6 +73,7 @@ if($status==false){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>お役立ち資料一覧</title>
 </head>
 <body>
@@ -84,27 +88,38 @@ if($status==false){
 	<td><?=$indate_view ?></td>
 </tr> -->
 
-<!-- <table border='6'> 
+<!-- <table border='1'> 
 <tr>
 	<th>タイトル</th>
-	<td>URL</td>
-	<td>詳細</td>
-	<td>タグ</td>
-	<td>登録日時</td>
+	<th>URL</th>
+	<th>詳細</th>
+	<th>タグ</th>
+	<th>登録日時</th>
+</tr>
+
+<?php
+foreach($rows as $row){
+?>
+<tr>
+    <td><?php echo $row['title']; ?></td>
+    <td><?php echo $row['url']; ?></td>
+    <td><?php echo $row['details']; ?></td>
+    <td><?php echo $row['tag']; ?></td>
+    <td><?php echo $row['indate']; ?></td>
 </tr> -->
+<?php } ?>
+
 
 <!-- <table>
-<tr><th>タイトル</th><th>URL</th><th>詳細</th><th>タグ</th><th>登録日時</th></tr> -->
+<tr><th>タイトル</th><th>URL</th><th>詳細</th><th>タグ</th><th>登録日時</th></tr> --> 
             <!-- ここでPHPのforeachを使って結果をループさせる -->
             <!-- <?php foreach ($stmt as $row): ?>
-                <tr><td><? $row[0]?></td><td><? $row[1]?></td><td><? $row[2]?></td><td><? $row[3]?></td><td><? $row[4]?></td></tr>
-            <?php endforeach; ?>
-        </table> -->
+                <!-- <tr><td><?=$title_view ?></td><td><?=$url_view ?></td><td><?=$details_view ?></td><td><?=$tag_view ?></td><td><?=$indate_view ?></td></tr> -->
+            <!-- <?php endforeach; ?> -->
+        <!-- </table> -->
 
-<p id="table"><?= $view ?></p>
-<!-- <table border="1"><?= $view ?></table> -->
+<p id="result"><?= $view ?></p>
 
 
-</table>
 </body>
 </html>
