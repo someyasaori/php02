@@ -1,6 +1,9 @@
 <?php
 
 //XSS対策
+function h ($value) {
+    return htmlspecialchars($value,ENT_QUOTES);
+}
 
 //検索条件取得
 $keyword =$_POST["keyword"];
@@ -53,7 +56,7 @@ if($status==false){
         // $indate_view .= $result['indate'];
         
         $view .= "<tr>";
-        $view .= "<td>".$result['title'].'</td><td>'.$result['url'].'</td><td>'.$result['details'].'</td><td>'.$result['tag'].'</td><td>'.$result['indate'];
+        $view .= "<td>".h($result['title']).'</td><td>'.h($result['url']).'</td><td>'.h($result['details']).'</td><td>'.h($result['tag']).'</td><td>'.h($result['indate']);
         $view .= "</tr>";
         
         // $graph1 .="<tr>";

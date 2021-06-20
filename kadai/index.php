@@ -16,7 +16,12 @@
         <p>タイトル<input type="text" name="title" id="title" size ="15"></p>
         <p>URL<input type="text" name="url" id="url" size ="30"></p>
         <p>詳細<input type="text" name="details" id="details" size ="30"></p>
-        <p>タグ<input type="text" name="tag" id="tag" size ="15"></p>
+        <p>タグ
+        <select name="tag" id="tag"　size ="15">
+            <option value="VPP">VPP</option>
+            <option value="再エネ">再エネ</option>
+            <option value="リソース">リソース</option>
+        </select></p>
         <p><input type="submit" id="submit" value ="登録"></p>
     </form>
     
@@ -26,7 +31,12 @@
 <h2>資料一覧から検索</h2>
 <form method ="POST" action="select.php">
     <p>検索ワード<input type="text" name="keyword" id="keyword"></p>
-    <p>タグ<input type="text" name="search_tag" id="search_tag"></p>
+    <p>タグ
+    <select name="search_tag" id="search_tag">
+        <option value="VPP">VPP</option>
+        <option value="再エネ">再エネ</option>
+        <option value="リソース">リソース</option>
+    </select></p>
     <p><input type="submit" name="submit" id="submit" value="検索"></p>
     <p class="all"><a href="select.php">すべて表示</a></p>
 </div>
