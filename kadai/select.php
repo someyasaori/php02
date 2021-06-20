@@ -19,7 +19,7 @@ try {
 //＊は全選択
 // $stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
 
-//検索バージョン（検索条件なければ一覧を表示、条件絞った後に新しいものから並べる、ができない）
+//検索バージョン（検索条件なければ一覧を表示（新しいもの順）、条件絞った一覧を新しいものから並べる、ができない）
 if($keyword!=""){
     $stmt =$pdo->query ("SELECT * FROM gs_bm_table WHERE details LIKE '%$keyword%' ");
 } else if ($search_tag!=""){
@@ -45,8 +45,6 @@ if($status==false){
     $error = $stmt->errorInfor();
     exit("ErrorQuery:". $error[2]);
 }else{
-   
-    
     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)){
         // $title_view .= $result['title'];
         // $url_view .= $result['url'];
@@ -54,10 +52,14 @@ if($status==false){
         // $tag_view .= $result['tag'];
         // $indate_view .= $result['indate'];
         
-        $view .= "<p>";
-        $view .= $result['title'].''.$result['url'].''.$result['details'].' '.$result['tag'].' '.$result['indate'];
-        $view .= "</p>";
+        $view .= "<tr>";
+        $view .= "<td>".$result['title'].'</td><td>'.$result['url'].'</td><td>'.$result['details'].'</td><td>'.$result['tag'].'</td><td>'.$result['indate'];
+        $view .= "</tr>";
         
+        // $graph1 .="<tr>";
+        // $graph1 .= "<td>".h($result1['category']).'</td><td>'.h($result1['COUNT(id)']);
+        // $graph1 .="</tr>";
+
         // $rows[] =$row;
 
     }
@@ -80,45 +82,18 @@ if($status==false){
 
 <p class="summary">検索結果表示</p> 
 
-<!-- <tr>
-	<td><?=$title_view ?></td>
-	<td><?=$url_view ?></td>
-	<td><?=$details_view ?></td>
-	<td><?=$tag_view ?></td>
-	<td><?=$indate_view ?></td>
-</tr> -->
-
-<!-- <table border='1'> 
-<tr>
-	<th>タイトル</th>
+<table class="result">
+    <tr>
+    <th>タイトル</th>
 	<th>URL</th>
 	<th>詳細</th>
 	<th>タグ</th>
 	<th>登録日時</th>
-</tr>
+    </tr>
+    <?= $view ?>
+</table>
 
-<?php
-foreach($rows as $row){
-?>
-<tr>
-    <td><?php echo $row['title']; ?></td>
-    <td><?php echo $row['url']; ?></td>
-    <td><?php echo $row['details']; ?></td>
-    <td><?php echo $row['tag']; ?></td>
-    <td><?php echo $row['indate']; ?></td>
-</tr> -->
-<?php } ?>
-
-
-<!-- <table>
-<tr><th>タイトル</th><th>URL</th><th>詳細</th><th>タグ</th><th>登録日時</th></tr> --> 
-            <!-- ここでPHPのforeachを使って結果をループさせる -->
-            <!-- <?php foreach ($stmt as $row): ?>
-                <!-- <tr><td><?=$title_view ?></td><td><?=$url_view ?></td><td><?=$details_view ?></td><td><?=$tag_view ?></td><td><?=$indate_view ?></td></tr> -->
-            <!-- <?php endforeach; ?> -->
-        <!-- </table> -->
-
-<p class="result"><?= $view ?></p>
+<!-- <p class="result"><?= $view ?></p> -->
 
 
 </body>
